@@ -17,16 +17,18 @@ const TvShows = () => {
   const movies=useSelector((state)=>state.netflix.movies)
   const genres = useSelector((state) => state.netflix.genres);
   const dispatch =useDispatch()
+  //eslint-disable-next-line
   const [user, setUser] = useState(undefined);
 
   useEffect(()=>{
     dispatch(getGenres())
+    //eslint-disable-next-line
   },[])
 
   useEffect(()=>{
     if (genresLoaded) {
       dispatch(fetchMovies({type:"tv"}))
-    }
+    }//eslint-disable-next-line
   },[genresLoaded])
 
   window.onscroll=()=>{

@@ -9,7 +9,7 @@ import Card from '../Components/Card'
 import { getUserLikesMovies } from './../store/index';
 
 const UserListedMovies = () => {
-  const [isScrolled,setIsScrolled]=useState(false)
+  const [isScrolled,setIsScrolled]=useState(false)//eslint-disable-next-line
   const genresLoaded=useSelector((state)=>state.netflix.genresLoaded)
   const [email, setEmail] = useState(undefined);
   const movies=useSelector((state)=>state.netflix.movies)
@@ -26,7 +26,7 @@ const UserListedMovies = () => {
   useEffect(() => {
     if (email) {
       dispatch(getUserLikesMovies(email));
-    }
+    }//eslint-disable-next-line
   }, [email]);
 
   window.onscroll=()=>{
