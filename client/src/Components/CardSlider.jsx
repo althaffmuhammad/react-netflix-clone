@@ -3,29 +3,19 @@ import Card from './Card';
 import styled from 'styled-components';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
+
 const CardSlider = ({data,title}) => {
   const[showControlls,setShowControlls]=useState(false)
-  const[sliderPosition,setSliderPosition]=useState(0)
+
   const listRef=useRef()
 
-  const handleDirection = (direction) => {
-    console.log(sliderPosition);
-    let distance = listRef.current.getBoundingClientRect().x - 70;
-    if (direction === "left" && sliderPosition > 0) {
-      listRef.current.style.transform = `translateX(${230 + distance}px)`;
-      setSliderPosition(sliderPosition - 1);
-    }
-    if (direction === "right" && sliderPosition < 4) {
-      listRef.current.style.transform = `translateX(${-230 + distance}px)`;
-      setSliderPosition(sliderPosition + 1);
-    }
-  };
+ 
   return (
     <Container className='flex column' onMouseEnter={()=>setShowControlls(true)} onMouseLeave={()=>setShowControlls(false)}>
       <h1>{title}</h1>
       <div className="wrapper">
         <div className={`slider-action left ${!showControlls?"none":''} flex j-center a-center`}>
-          <AiOutlineLeft onClick={()=>handleDirection("left")}/>
+          <AiOutlineLeft />
         </div>
         <div className='slider flex' ref={listRef}>
         {data.map((movie,index)=>(
@@ -33,7 +23,7 @@ const CardSlider = ({data,title}) => {
         ))}
       </div>
       <div className={`slider-action right ${!showControlls?"none":''} flex j-center a-center`}>
-          <AiOutlineRight onClick={()=>handleDirection("right")}/>
+          <AiOutlineRight />
         </div>
       </div>
     </Container>
@@ -56,6 +46,7 @@ const Container = styled.div`
       gap: 1rem;
       transform: translateX(0px);
       transition: 0.3s ease-in-out;
+      display: flex;
       margin-left: 50px;
     }
     .slider-action {
