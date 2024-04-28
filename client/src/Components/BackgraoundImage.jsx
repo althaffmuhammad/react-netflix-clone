@@ -1,10 +1,10 @@
 import React from 'react'
-import backgraound from '../assets/login.jpg'
+import backgraound from '../assets/background_banner.jpg'
 import styled from 'styled-components'
 
 const BackgraoundImage = () => {
   return (
-    <Container>
+    <Container >
         <img src={backgraound} alt="backgraound" />
     </Container>
   )

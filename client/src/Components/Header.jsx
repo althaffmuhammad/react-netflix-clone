@@ -6,7 +6,7 @@ import logo from '../assets/logo.png'
 const Header = (props) => {
     const navigate =useNavigate()
   return (
-    <StyledHeader className="flex a-center j-between">
+    <StyledHeader className="flex a-center j-between Header_Login">
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
@@ -33,6 +33,15 @@ const StyledHeader = styled.header`
     border-radius: 0.2rem;
     font-weight: bolder;
     font-size: 1.05rem;
+  }
+
+  @media (max-width: 900px) {
+    padding: 0 1rem;
+    .logo{
+      img{
+        height:3rem
+      }
+    }
   }
 `;
 

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import { FaPlay } from 'react-icons/fa'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
-import backgroundImage from '../assets/home.jpg'
-import MovieLogo from '../assets/homeTitle.webp'
+import backgroundImage from '../assets/hero_banner.jpg'
+import MovieLogo from '../assets/hero_title.png'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -87,7 +87,7 @@ const Container = styled.div`
       bottom: 5rem;
       .logo {
         img {
-          width: 100%;
+          width: 80%;
           height: 100%;
           margin-left: 5rem;
         }

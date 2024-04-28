@@ -95,4 +95,17 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 900px) {
+    .content{
+      .form-container{
+        .form{
+          padding: 2rem;
+          background-color: #000000b0;
+          width: 70vw;
+          gap: 2rem;
+          color: white;
+        }
+      }
+    }
+  }
 `;
