@@ -1,0 +1,13 @@
+.bg-img {
+  background: url(../assets/background_banner.jpg);
+  display: cover;
+  background-size: cover;
+}
+
+@media (max-width: 900px) {
+  .bg-img {
+    background: url(../assets/background_banner_res.jpg);
+    display: cover;
+    background-size: cover;
+  }
+}

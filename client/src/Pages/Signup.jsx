@@ -5,6 +5,7 @@ import Header from '../Components/Header'
 import { firebaseAuth } from './../utils/firebase-config';
 import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import './Signup.css'
 
 const Signup = () => {
     const navigate =useNavigate()
@@ -29,7 +30,7 @@ const Signup = () => {
   return (
     <Container >
         <BackgraoundImage/>
-        <div className="content">
+        <div className="signup-content">
             <Header login/>
             <div className="body flex column a-center j-center">
                 <div className="text felx column txt">
@@ -39,10 +40,10 @@ const Signup = () => {
                        Ready to watch? Enter your email to create or restart membership.
                      </h6>
                 </div>
-                <div className="form">
+                <div className="form signup-form">
                     <input type="email" name="email" placeholder='Emain Address' value={formValues.email} onChange={(e)=>setFormValues({...formValues,[e.target.name]:e.target.value,})}/>
                     {showPassword && (
-                        <input type="password" name="password" placeholder='Password'  value={formValues.password} onChange={(e)=>setFormValues({...formValues,[e.target.name]:e.target.value,})}/>
+                        <input className='password' type="password" name="password" placeholder='Password'  value={formValues.password} onChange={(e)=>setFormValues({...formValues,[e.target.name]:e.target.value,})}/>
                     ) }
                     {!showPassword && (
                         <button onClick={() => setShowPassword(true)}>Get Started</button>
@@ -59,118 +60,16 @@ export default Signup
 
 const Container = styled.div`
   position: relative;
-  .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
-    width: 100vw;
+  .signup-form {
     display: grid;
-    grid-template-rows: 15vh 85vh;
-    .body {
-      gap: 1rem;
-      .text {
-        gap: 1rem;
-        text-align: center;
-        font-size: 2rem;
-        h1 {
-          padding: 0 25rem;
-        }
-      }
-      .form {
-        display: grid;
-        grid-template-columns: ${({ showPassword }) =>
-          showPassword ? "1fr 1fr" : "2fr 1fr"};
-        width: 60%;
-        input {
-          color: black;
-          border: none;
-          padding: 1.5rem;
-          font-size: 1.2rem;
-          border: 1px solid black;
-          &:focus {
-            outline: none;
-          }
-        }
-        button {
-          padding: 0.5rem 1rem;
-          background-color: #e50914;
-          border: none;
-          cursor: pointer;
-          color: white;
-          font-weight: bolder;
-          font-size: 1.05rem;
-        }
-      }
-      button {
-        padding: 0.5rem 1rem;
-        background-color: #e50914;
-        border: none;
-        cursor: pointer;
-        color: white;
-        border-radius: 0.2rem;
-        font-weight: bolder;
-        font-size: 1.05rem;
-      }
-    }
-  }
-  @media (max-width: 900px) {
-    .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-rows: 15vh 85vh;
-    .body {
-      gap: 1rem;
-      .text {
-        gap: 1rem;
-        text-align: center;
-        font-size: 1rem;
-        h1 {
-          padding: 0 25rem;
-        }
-      }
-      .form {
-        display: grid;
-        grid-template-columns: ${({ showPassword }) =>
-          showPassword ? "1fr 1fr" : "2fr 1fr"};
-        width: 60%;
-        input {
-          color: black;
-          border: none;
-          padding: 1.5rem;
-          font-size: 1.2rem;
-          border: 1px solid black;
-          &:focus {
-            outline: none;
-          }
-        }
-        button {
-          padding: 0.5rem 1rem;
-          background-color: #e50914;
-          border: none;
-          cursor: pointer;
-          color: white;
-          font-weight: bolder;
-          font-size: 1.05rem;
-        }
-      }
-      button {
-        padding: 0.5rem 1rem;
-        background-color: #e50914;
-        border: none;
-        cursor: pointer;
-        color: white;
-        border-radius: 0.2rem;
-        font-weight: bolder;
-        font-size: 1.05rem;
-      }
-    }
-  }
-  }
+    grid-template-columns: ${({ showPassword }) =>
+      showPassword ? "1fr 1fr" : "2fr 1fr"};
+    width: 60%;
+}
+@media (max-width: 900px) {
+  .signup-form {
+    grid-template-columns: 1fr; /* Change to single column layout */
+    width: 80%; /* Adjust width as needed */;
+}
+}
 `;

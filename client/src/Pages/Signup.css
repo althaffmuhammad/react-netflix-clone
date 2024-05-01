@@ -1,0 +1,103 @@
+.signup-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 15vh 85vh;
+}
+.signup-content > .body {
+  gap: 1rem;
+}
+.signup-content > .body > .text {
+  gap: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.signup-content > .body > .text > h1 {
+  padding: 0 25rem;
+}
+.signup-form > input {
+  color: black;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  border: 1px solid black;
+}
+.signup-form > input:focus {
+  outline: none;
+}
+.signup-form > button {
+  padding: 0.5rem 1rem;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.05rem;
+}
+.signup-content > .body > button {
+  padding: 0.5rem 1rem;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 0.2rem;
+  font-weight: bolder;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .signup-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 10vh 70vh;
+  }
+  .signup-content > .body {
+    gap: 1rem;
+  }
+  .signup-content > .body > .text {
+    gap: 1rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .signup-content > .body > .text > h1 {
+    padding: 0 1rem;
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  .signup-content > .body > .text > h4 {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  .signup-content > .body > .text > h6 {
+    font-size: 15px;
+    padding-bottom: 20px;
+  }
+  .signup-form {
+    gap: 10px;
+  }
+  .signup-form > input {
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid black;
+  }
+  .signup-form > button {
+    padding: 0.5rem 1rem;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+}
