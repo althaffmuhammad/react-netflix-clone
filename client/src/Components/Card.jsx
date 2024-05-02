@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import video from '../assets/video.mp4'
 import {IoPlayCircleSharp} from 'react-icons/io5'
 import {RiThumbUpFill,RiThumbDownFill} from 'react-icons/ri'
 import {BsCheck} from 'react-icons/bs'
@@ -40,10 +39,6 @@ const Card = ({movieData,isLiked=false}) => {
       {
         isHovered && (
           <div className="hover">
-            <div className="image-video-container">
-              <img src={`https://image.tmdb.org/t/p/w500${movieData.image}`} alt="movies" onClick={()=>navigate("/player")}/>
-              <video src={video} autoPlay muted loop onClick={()=>navigate("/player")}/>
-            </div>
               <div className="info-container flex column">
                 <h3 className='name' onClick={()=>navigate("/player")}>{movieData.name}</h3>
                 <div className="icons flex j-center">
@@ -62,9 +57,7 @@ const Card = ({movieData,isLiked=false}) => {
                   </div>
                 </div>
                 <div className="genres flex">
-                  <ul className="flex">{movieData.genres.map((genre)=>(
-                    <li key={genre}>{genre}</li>
-                  ))}</ul>
+                  <li key={movieData.genres}>{movieData.genres[1]}</li>
                 </div>
               </div>
           </div>
@@ -90,37 +83,16 @@ const Container = styled.div`
   }
   .hover {
     z-index: 99;
-    height: max-content;
-    width: 20rem;
+    height:100%;
+    width: 230px;
     position: absolute;
-    top: -18vh;
+    top: 0;
     left: 0;
-    border-radius: 0.3rem;
+    /* border-radius: 0.3rem; */
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
     background-color: #181818;
     transition: 0.3s ease-in-out;
-    .image-video-container {
-      position: relative;
-      height: 140px;
-      img {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 0.3rem;
-        top: 0;
-        z-index: 4;
-        position: absolute;
-      }
-      video {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 0.3rem;
-        top: 0;
-        z-index: 5;
-        position: absolute;
-      }
-    }
+
     .info-container {
       padding: 1rem;
       gap: 0.5rem;
@@ -140,6 +112,53 @@ const Container = styled.div`
       }
     }
     .genres {
+      display: none;
+    }
+  }
+  @media (max-width:900px) {
+    max-width: 230px;
+  width: 150px;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  img {
+    border-radius: 0.2rem;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  .hover {
+    z-index: 99;
+    height: max-content;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+    background-color: #181818;
+    transition: 0.3s ease-in-out;
+
+    .info-container {
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+    .icons {
+      .controls {
+        display: flex;
+        gap: 0rem;
+        display: none;
+      }
+      svg {
+        font-size: 2px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: #b8b8b8;
+        }
+      }
+    }
+    .genres {
       ul {
         gap: 1rem;
         li {
@@ -150,5 +169,7 @@ const Container = styled.div`
         }
       }
     }
+  }  
   }
+
 `;

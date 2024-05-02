@@ -76,7 +76,7 @@ const Container = styled.div`
   .hero {
     position: relative;
     .background-image {
-      filter: brightness(60%);
+      filter: brightness(80%);
     }
     img {
       height: 100vh;
@@ -118,5 +118,53 @@ const Container = styled.div`
         }
       }
     }
+  }
+  @media (max-width:900px) {
+    .hero {
+    position: relative;
+    .background-image {
+      filter: brightness(80%);
+    }
+    img {
+      height: 60vh;
+      width: 100vw;
+    }
+    .container {
+      position: absolute;
+      bottom: 4rem;
+      .logo {
+        img {
+          width: 60%;
+          height: 100%;
+          margin-left: 2rem;
+        }
+      }
+      .buttons {
+        margin: 2rem;
+        gap: .5rem;
+        button {
+          font-size: 1rem;
+          gap: .5rem;
+          border-radius: 0.2rem;
+          padding: 0.5rem;
+          padding-left: 1rem;
+          padding-right: 1.4rem;
+          border: none;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            opacity: 0.8;
+          }
+          &:nth-of-type(2) {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: white;
+            svg {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
   }
 `;
