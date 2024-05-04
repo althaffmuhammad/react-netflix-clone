@@ -39,4 +39,27 @@ const Container = styled.div`
       object-fit: cover;
     }
   }
+  @media (max-width:900px) {
+    .player {
+    width: 100vw;
+    height: 50vh;
+    margin-top: 10rem;
+    .back {
+      position: absolute;
+      padding: 2rem;
+      z-index: 1;
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+    video {
+      height: 50%;
+      width: 150%;
+      object-fit: cover;
+      margin-top: 50%;
+    }
+  }
+  }
+
 `;
