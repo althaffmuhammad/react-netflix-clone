@@ -105,7 +105,6 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    /* border-radius: 0.3rem; */
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
     background-color: #181818;
     transition: 0.3s ease-in-out;
@@ -148,6 +147,7 @@ const Container = styled.div`
       z-index: 99;
       height: max-content;
       width: 150px;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
