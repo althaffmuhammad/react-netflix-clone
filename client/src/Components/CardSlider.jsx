@@ -13,18 +13,12 @@ const CardSlider = ({data,title}) => {
   return (
     <Container className='flex column' onMouseEnter={()=>setShowControlls(true)} onMouseLeave={()=>setShowControlls(false)}>
       <h1>{title}</h1>
-      <div className="wrapper">
-        {/* <div className={`slider-action left ${!showControlls?"none":''} flex j-center a-center`}>
-          <AiOutlineLeft />
-        </div> */}
-        <div className='slider flex' ref={listRef}>
-        {data.map((movie,index)=>(
-          <Card movieData={movie} index={index} key={movie.id}/>
-        ))}
-      </div>
-      {/* <div className={`slider-action right ${!showControlls?"none":''} flex j-center a-center`}>
-          <AiOutlineRight />
-        </div> */}
+        <div className="wrapper">
+          <div className='slider flex' ref={listRef}>
+            {data.map((movie,index)=>(
+              <Card movieData={movie} index={index} key={movie.id}/>
+          ))}
+        </div>
       </div>
     </Container>
 

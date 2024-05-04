@@ -45,8 +45,8 @@ const Movies = () => {
             <Navbar isScrolled={isScrolled}/>
         </div>
         <div className="data">
-        <SelectGenre genres={genres} type="movie" />
-        {movies.length ? <Slider movies={movies} /> : <NotAvailable />}
+          <SelectGenre genres={genres} type="movie" />
+          {movies.length ? <Slider movies={movies} /> : <NotAvailable />}
         </div>
     </Container>
   )
